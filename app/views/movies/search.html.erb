@@ -1,0 +1,16 @@
+
+<h1>Title: </h1> <%= @movie_title %>
+<br>
+<h3>Director: </h3> <%= @movie_director %>
+<br>
+<h4>Runtime: </h4> <%= @movie_runtime %>
+<br>
+<h4>Genre: </h4> <%= @movie_genre %>
+<br>
+<h4>Rated: </h4> <%= @movie_rated %>
+<br>
+<h4>Plot: </h4> <%= @movie_plot %>
+<br>
+<%= image_tag @movie_poster %>
+
+<%=link_to "Watch List", root_path %>
