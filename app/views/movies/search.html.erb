@@ -1,16 +1,20 @@
 
-<h1>Title: </h1> <%= @movie_title %>
+<h1>Title: </h1> <%= @title %>
 <br>
-<h3>Director: </h3> <%= @movie_director %>
+<h3>Director: </h3> <%= @director %>
 <br>
-<h4>Runtime: </h4> <%= @movie_runtime %>
+<h4>Runtime: </h4> <%= @runtime %>
 <br>
-<h4>Genre: </h4> <%= @movie_genre %>
+<h4>Genre: </h4> <%= @genre %>
 <br>
-<h4>Rated: </h4> <%= @movie_rated %>
+<h4>Rated: </h4> <%= @rated %>
 <br>
-<h4>Plot: </h4> <%= @movie_plot %>
+<h4>Plot: </h4> <%= @plot %>
 <br>
-<%= image_tag @movie_poster %>
+<%= image_tag @poster %>
 
-<%=link_to "Watch List", root_path %>
+<%=link_to "Watch List", movies_create_path(:title => @title, :director => @director,
+                                            :runtime => @runtime,:genre => @genre,
+                                            :rated => @rated,:plot => @plot,
+                                            :poster => @poster,:user => current_user),
+                                            :method => :post %>

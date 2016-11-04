@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   devise_for :users
   root 'movies#index'
   get 'movies/search'
+  post 'movies/create'
+  get 'movies/my_movies'
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

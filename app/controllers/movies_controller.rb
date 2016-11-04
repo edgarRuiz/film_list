@@ -12,18 +12,34 @@ class MoviesController < ApplicationController
     response = HTTParty.get("http://www.omdbapi.com/?t=#{movie_name}&y=&plot=short&r=json")
     
     if response["Response"] == "True"
-      @movie_title = response["Title"]
-      @movie_release_date = response["Released"]
-      @movie_director = response["Director"]
-      @movie_poster = response["Poster"]
-      @movie_runtime = response["Runtime"]
-      @movie_genre = response["Genre"]
-      @movie_rated = response["Rated"]
-      @movie_plot = response["Plot"]
+      @title = response["Title"]
+      @release_date = response["Released"]
+      @director = response["Director"]
+      @poster = response["Poster"]
+      @runtime = response["Runtime"]
+      @genre = response["Genre"]
+      @rated = response["Rated"]
+      @plot = response["Plot"]
       
     else
-      redirect_to movies_path
+      redirect_to root_path
     end
+  end
+  
+  def create
+    @movie = Movie.new(:title => params[:title], :release_date => params[:release_date],
+                      :director => params[:director],:poster => params[:poster], 
+                      :runtime => params[:runtime], :genre => params[:genre] , 
+                      :rated => params[:rated], :plot => params[:plot], :user => current_user)
+    if @movie.save
+      redirect_to 
+    else
+      render html: "failed"
+    end
+  end
+  
+  def my_movies
+    @movies = Movie.all()
   end
   
 end

@@ -1,0 +1,19 @@
+<h1>My movies</h1>
+
+<% @movies.each do |movie| %>
+
+  <h1>Title: </h1> <%= movie.title %>
+  <br>
+  <h3>Director: </h3> <%= movie.director %>
+  <br>
+  <h4>Runtime: </h4> <%= movie.runtime %>
+  <br>
+  <h4>Genre: </h4> <%= movie.genre %>
+  <br>
+  <h4>Rated: </h4> <%= movie.rated %>
+  <br>
+  <h4>Plot: </h4> <%= movie.plot %>
+  <br>
+  <%= image_url movie.poster %>
+
+<%end%>
