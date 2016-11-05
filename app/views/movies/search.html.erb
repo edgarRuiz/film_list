@@ -3,6 +3,8 @@
 <br>
 <h3>Director: </h3> <%= @director %>
 <br>
+<h4>Release date: </h4> <%= @release_date %>
+<br>
 <h4>Runtime: </h4> <%= @runtime %>
 <br>
 <h4>Genre: </h4> <%= @genre %>
@@ -18,3 +20,5 @@
                                             :rated => @rated,:plot => @plot,
                                             :poster => @poster,:user => current_user),
                                             :method => :post %>
+                                            
+                                            <%#=link_to "Watch List", movies_create_path, :method => :post %>

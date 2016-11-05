@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   root 'movies#index'
   get 'movies/search'
+  get 'movies/create'
   post 'movies/create'
   get 'movies/my_movies'
   

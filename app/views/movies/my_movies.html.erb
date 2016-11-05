@@ -6,6 +6,8 @@
   <br>
   <h3>Director: </h3> <%= movie.director %>
   <br>
+  <h4>Release date: </h4> <%= movie.release_date %>
+  <br>
   <h4>Runtime: </h4> <%= movie.runtime %>
   <br>
   <h4>Genre: </h4> <%= movie.genre %>
@@ -14,6 +16,6 @@
   <br>
   <h4>Plot: </h4> <%= movie.plot %>
   <br>
-  <%= image_url movie.poster %>
+  <%= image_tag movie.poster %>
 
 <%end%>

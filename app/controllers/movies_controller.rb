@@ -21,6 +21,7 @@ class MoviesController < ApplicationController
       @rated = response["Rated"]
       @plot = response["Plot"]
       
+      
     else
       redirect_to root_path
     end
@@ -32,7 +33,7 @@ class MoviesController < ApplicationController
                       :runtime => params[:runtime], :genre => params[:genre] , 
                       :rated => params[:rated], :plot => params[:plot], :user => current_user)
     if @movie.save
-      redirect_to 
+      redirect_to movies_my_movies_path
     else
       render html: "failed"
     end
