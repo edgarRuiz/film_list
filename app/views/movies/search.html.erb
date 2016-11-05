@@ -13,12 +13,15 @@
 <br>
 <h4>Plot: </h4> <%= @plot %>
 <br>
-<%= image_tag @poster %>
-
-<%=link_to "Watch List", movies_create_path(:title => @title, :director => @director,
+<% if @poster == "N/A" %>
+<%else%>
+  <%= image_tag @poster %>
+<%end%>
+<br><br>
+<%=button_to "Add Movie to Watch List", movies_create_path(:title => @title, :director => @director,
                                             :runtime => @runtime,:genre => @genre,
                                             :rated => @rated,:plot => @plot,
                                             :poster => @poster,:user => current_user),
-                                            :method => :post %>
+                                            :method => :post, class: "btn btn-primary" %>
                                             
-                                            <%#=link_to "Watch List", movies_create_path, :method => :post %>
+<br><br>

@@ -1,8 +1,13 @@
 
-<%= form_tag movies_search_path, method: :get do %>
-  <%= label_tag :movie_name %>
-  <%= text_field_tag :movie_name %>
-  <%= submit_tag("Search") %>
-  
-<%end%>
+<div class = "row">
+  <div class = "col-md-6">
+    <%= form_tag movies_search_path, method: :get, class: "form-inline" do %>
+      <div class = "form-group">
+        <%= label_tag :movie_name %>
+        <%= text_field_tag :movie_name, nil, placeholder: "Movie Title",class:"form-control"%>
+      </div>
+        <%= submit_tag("Search", class: "btn btn-default") %>
+    <%end%>
+  </div>
+</div>
 
