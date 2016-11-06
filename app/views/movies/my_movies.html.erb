@@ -6,19 +6,22 @@
   <div class="panel-heading text-center">
     <h1> <%= movie.title %></h1>
   </div>
-  <div class="panel-footer"><h3>Director: </h3> <%= movie.director %>
-  <br>
-  <h4>Release date: </h4> <%= movie.release_date %>
-  <br>
-  <h4>Runtime: </h4> <%= movie.runtime %>
-  <br>
-  <h4>Genre: </h4> <%= movie.genre %>
-  <br>
-  <h4>Rated: </h4> <%= movie.rated %>
-  <br>
-  <h4>Plot: </h4> <%= movie.plot %>
-  <br>
-  <%= image_tag movie.poster %></div>
+  <div class="panel-footer" style = "overflow: auto;">
+    <div class = "row">
+      <div class = "col-sm-6 col-md-6 col-lg-4" style = "float:left;">
+         <%= image_tag movie.poster %>
+      </div>
+        <div class = "col-sm-6 col-md-6 col-lg-8" style = "float:right;">
+        <h3>Director: </h3> <%= movie.director %>
+        <h4>Release date: </h4> <%= movie.release_date %>
+        <h4>Runtime: </h4> <%= movie.runtime %>
+        <h4>Genre: </h4> <%= movie.genre %>
+        <h4>Rated: </h4> <%= movie.rated %>
+        <h4>Plot: </h4><p><%= movie.plot %></p>
+      </div>
+      <div style="clear:both;"></div>
+    </div>
+ </div>
 </div>
 
   

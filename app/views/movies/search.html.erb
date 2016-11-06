@@ -1,30 +1,41 @@
 
-<h1>Title: </h1> <%= @title %>
-<br>
-<h3>Director: </h3> <%= @director %>
-<br>
-<h4>Release date: </h4> <%= @release_date %>
-<br>
-<h4>Runtime: </h4> <%= @runtime %>
-<br>
-<h4>Genre: </h4> <%= @genre %>
-<br>
-<h4>Rated: </h4> <%= @rated %>
-<br>
-<h4>Plot: </h4> <%= @plot %>
-<br>
-<% if @poster == "N/A" %>
-<%else%>
-  <%= image_tag @poster %>
-<%end%>
-<br><br>
-<%=button_to "Back to search", root_path, class: "btn btn-primary col-md-2", :method => :get %>
-<%=button_to "Add Movie to Watch List", movies_create_path(:title => @title, :director => @director,
+<h1>Search</h1>
+
+<div class="panel panel-info">
+  <div class="panel-heading text-center">
+    <div class = "row">
+      <div class = "col-xs-2 col-sm-6 col-md-4 col-lg-2" style = "float:left;"> <h1><%= @title %></h1></div>
+      <div class = "col-xs-8 col-sm-6 col-md-8 col-lg-4 col-lg-offset-6" style = "float:right; top: 24px;"><%=button_to "Add Movie to Watch List", movies_create_path(:title => @title, :director => @director,
                                             :release_date => @release_date,
                                             :runtime => @runtime,:genre => @genre,
                                             :rated => @rated,:plot => @plot,
                                             :poster => @poster,:user => current_user),
-                                            :method => :post, class: "btn btn-success col-md-2" %>
+                                            :method => :post, class: "btn btn-success" %>
+      </div>
+    </div>
+  </div>
+  <div class="panel-footer" style = "overflow: auto;">
+    <div class = "row">
+      <div class = "col-sm-6 col-md-6 col-lg-4" style = "float:left;">
+         <% if @poster == "N/A" %>
+        <%else%>
+          <%= image_tag @poster %>
+        <%end%>
+      </div>
+        <div class = "col-sm-6 col-md-6 col-lg-8" style = "float:right;">
+        <h3>Director: </h3> <%= @director %>
+        <h4>Release date: </h4> <%= @release_date %>
+        <h4>Runtime: </h4> <%= @runtime %>
+        <h4>Genre: </h4> <%= @genre %>
+        <h4>Rated: </h4> <%= @rated %>
+        <h4>Plot: </h4> <%= @plot %>
+      </div>
+      <div style="clear:both;"></div>
+    </div>
+ </div>
+</div>
 
+<%=button_to "Back to search", root_path, class: "btn btn-primary col-md-2", :method => :get %>
                                             
 <br><br>
+
