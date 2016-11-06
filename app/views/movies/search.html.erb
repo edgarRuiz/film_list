@@ -20,6 +20,7 @@
 <br><br>
 <%=button_to "Back to search", root_path, class: "btn btn-primary col-md-2", :method => :get %>
 <%=button_to "Add Movie to Watch List", movies_create_path(:title => @title, :director => @director,
+                                            :release_date => @release_date,
                                             :runtime => @runtime,:genre => @genre,
                                             :rated => @rated,:plot => @plot,
                                             :poster => @poster,:user => current_user),

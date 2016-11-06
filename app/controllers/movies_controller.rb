@@ -28,10 +28,10 @@ class MoviesController < ApplicationController
   end
   
   def create
-    @movie = Movie.new(:title => params[:title], :release_date => params[:release_date],
-                      :director => params[:director],:poster => params[:poster], 
-                      :runtime => params[:runtime], :genre => params[:genre] , 
-                      :rated => params[:rated], :plot => params[:plot], :user => current_user)
+    @movie = Movie.new(:title => params[:title], :director => params[:director],
+                                        :release_date => params[:release_date],:poster => params[:poster], 
+                                        :runtime => params[:runtime], :genre => params[:genre] , 
+                                        :rated => params[:rated], :plot => params[:plot], :user => current_user)
     if @movie.save
       redirect_to movies_my_movies_path
     else
