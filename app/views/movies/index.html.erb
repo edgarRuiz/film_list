@@ -1,12 +1,12 @@
 
 <div class = "row">
-  <div class = "col-md-6">
+  <div class = "col-md-6 col-md-offset-4" >
     <%= form_tag movies_search_path, method: :get, class: "form-inline" do %>
       <div class = "form-group">
         <%= label_tag :movie_name %>
         <%= text_field_tag :movie_name, nil, placeholder: "Movie Title",class:"form-control"%>
       </div>
-        <%= submit_tag("Search", class: "btn btn-default") %>
+        <%= submit_tag("Search", class: "btn btn-primary") %>
     <%end%>
   </div>
 </div>

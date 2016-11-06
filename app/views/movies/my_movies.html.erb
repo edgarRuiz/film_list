@@ -2,9 +2,11 @@
 
 <% @movies.each do |movie| %>
 
-  <h1>Title: </h1> <%= movie.title %>
-  <br>
-  <h3>Director: </h3> <%= movie.director %>
+<div class="panel panel-info">
+  <div class="panel-heading text-center">
+    <h1> <%= movie.title %></h1>
+  </div>
+  <div class="panel-footer"><h3>Director: </h3> <%= movie.director %>
   <br>
   <h4>Release date: </h4> <%= movie.release_date %>
   <br>
@@ -16,6 +18,9 @@
   <br>
   <h4>Plot: </h4> <%= movie.plot %>
   <br>
-  <%= image_tag movie.poster %>
+  <%= image_tag movie.poster %></div>
+</div>
+
+  
 
 <%end%>
