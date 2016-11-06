@@ -40,7 +40,7 @@ class MoviesController < ApplicationController
   end
   
   def my_movies
-    @movies = Movie.all()
+    @movies = Movie.where(:user => current_user)
   end
   
 end
