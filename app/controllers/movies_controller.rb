@@ -24,7 +24,7 @@ class MoviesController < ApplicationController
       
       
     else
-      flash[:danger] = "Movie was not found.  Please try again.  Perhaps title is misspelled"
+      flash[:danger] = 'Movie was not found.  Please try again.  Perhaps title was misspelled.'
       redirect_to movies_index_path
     end
   end
