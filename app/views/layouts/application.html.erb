@@ -8,11 +8,16 @@
 </head>
 <body>
   <div class = "container">
-  <%= render "layouts/navbar" %>
+    
+    <%= render "layouts/navbar" %>
+    
+    <% flash.each do |key, value| %>
+        <div class="text-center alert alert-<%= key %>"><%= value %></div>
+    <% end %>
+    
+    <%= yield %>
 
-<%= yield %>
-
-  <div</div>
+  </div>
 
 </body>
 </html>
