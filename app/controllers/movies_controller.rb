@@ -45,4 +45,17 @@ class MoviesController < ApplicationController
     @movies = Movie.where(:user => current_user).paginate(:page => params[:page], :per_page => 5)
   end
   
+  def destroy
+    movie = Movie.find(params[:id])
+    
+    if movie.destroy
+      flash[:success] = "#{movie.title} was successfully removed from your list"
+      redirect_to movies_my_movies_path
+    else
+      flash[:danger] = "#{movie.title} could not be deleted"
+      redirect_to movies_my_movies_path
+    end
+    
+  end
+  
 end

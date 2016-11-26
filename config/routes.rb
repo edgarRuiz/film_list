@@ -3,12 +3,13 @@ Rails.application.routes.draw do
   root 'static_pages#index'
 
   devise_for :users
-  
-  get 'movies/index' 
-  get 'movies/search'
-  get 'movies/create'
-  post 'movies/create'
-  get 'movies/my_movies'
+  get '/movies/index' 
+  get '/movies/search'
+  get '/movies/create'
+  post '/movies/create'
+  get '/movies/my_movies'
+  resources :movies, only: [:destroy]
+
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
