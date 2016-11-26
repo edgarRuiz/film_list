@@ -16,6 +16,9 @@ gem 'httparty', '~> 0.14.0'
 gem 'bootstrap-sass', '~> 3.3.5'
 gem 'devise'
 gem 'devise-bootstrap-views'
+gem 'will_paginate', '~> 3.1.0'
+gem 'bootstrap-will_paginate'
+
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

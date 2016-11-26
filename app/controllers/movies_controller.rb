@@ -42,7 +42,8 @@ class MoviesController < ApplicationController
   end
   
   def my_movies
-    @movies = Movie.where(:user => current_user)
+    #Post.paginate(:page => params[:page], :per_page => 30)
+    @movies = Movie.where(:user => current_user).paginate(:page => params[:page], :per_page => 5)
   end
   
 end
