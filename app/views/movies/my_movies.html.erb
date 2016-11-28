@@ -13,8 +13,8 @@
 <div class="panel panel-info">
   <div class="panel-heading text-center">
     <div class = "row">
-      <div class = "col-xs-4 col-sm-6 col-md-4 col-lg-8" style = "float:left;"> <h1><%= movie.title %></h1></div>
-      <div class = "col-xs-8 col-sm-6 col-md-8 col-lg-2 col-lg-offset-2" style = "float:right; top: 24px;"><%=button_to "Delete Movie", movie, :method => :delete, data: { confirm: 'Delete ' + movie.title + ' from your list?' }, class: "btn btn-danger" %>
+      <div class = "col-xs-12 col-sm-6 col-md-4 col-lg-8" style = "float:left;"> <h1><%= movie.title %></h1></div>
+      <div class = "col-xs-12 col-sm-6 col-md-8 col-lg-2 col-lg-offset-2" style = "float:right; top: 24px;"><%=button_to "Delete Movie", movie, :method => :delete, data: { confirm: 'Delete ' + movie.title + ' from your list?' }, class: "btn btn-danger" %>
       </div>
     </div>
   </div>
