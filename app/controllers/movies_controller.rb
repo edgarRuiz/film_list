@@ -30,15 +30,28 @@ class MoviesController < ApplicationController
   end
   
   def create
-    @movie = Movie.new(:title => params[:title], :director => params[:director],
-                                        :release_date => params[:release_date],:poster => params[:poster], 
-                                        :runtime => params[:runtime], :genre => params[:genre] , 
-                                        :rated => params[:rated], :plot => params[:plot], :user => current_user)
-    if @movie.save
+    
+    #If a movie with same title and director exists then it is already in the list
+    title = params[:title]
+    director = params[:director]
+    movie = Movie.where(:title => title, :director => director)
+    if movie.empty?
+      @movie = Movie.new(:title => title, :director => director,
+                                          :release_date => params[:release_date],:poster => params[:poster], 
+                                          :runtime => params[:runtime], :genre => params[:genre] , 
+                                          :rated => params[:rated], :plot => params[:plot], :user => current_user)
+      if @movie.save
+        flash[:success] = "#{title} was successfully added to your list!"
+        redirect_to movies_my_movies_path
+      else
+        flash[:danger] = "Could not add #{title} to your list.  Please try again"
+        redirect_to movies_my_movies_path
+      end
+    else 
+      flash[:danger] = "You already have #{title} in your list!"
       redirect_to movies_my_movies_path
-    else
-      render html: "failed"
     end
+    
   end
   
   def my_movies
