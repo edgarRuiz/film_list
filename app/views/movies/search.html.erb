@@ -3,8 +3,8 @@
 <div class="panel panel-info">
   <div class="panel-heading text-center">
     <div class = "row">
-      <div class = "col-sm-6 col-md-4 col-lg-8" style = "float:left;"> <h1><%= @title %></h1></div>
-      <div class = "col-sm-6 col-md-8 col-lg-4" style = "float:right; top: 24px;"><%=button_to "Add Movie to Watch List", movies_create_path(:title => @title, :director => @director,
+      <div class = "col-xs-6 col-sm-6 col-md-4 col-lg-8 style = "overflow: auto;"" style = "float:left;"> <h1><%= @title %></h1></div>
+      <div class = "col-xs-6 col-sm-6 col-md-8 col-lg-4" style = "float:right; top: 24px;"><%=button_to "Add Movie to Watch List", movies_create_path(:title => @title, :director => @director,
                                             :release_date => @release_date,
                                             :runtime => @runtime,:genre => @genre,
                                             :rated => @rated,:plot => @plot,
