@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   post '/movies/create'
   get '/movies/my_movies'
   resources :movies, only: [:destroy]
+  resources :list_users
 
   
   # The priority is based upon order of creation: first created -> highest priority.

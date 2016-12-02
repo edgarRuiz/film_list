@@ -55,7 +55,8 @@ class MoviesController < ApplicationController
   end
   
   def my_movies
-    @movies = Movie.where(:user => current_user).paginate(:page => params[:page], :per_page => 5)
+    #@movies = Movie.where(:user => current_user).paginate(:page => params[:page], :per_page => 5) 
+    @movies = Movie.all.paginate(:page => params[:page], :per_page => 5)
   end
   
   def destroy
