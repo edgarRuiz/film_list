@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   post '/movies/create'
   get '/movies/my_movies'
   resources :movies, only: [:destroy]
+  
+  #if I leave this out then /index goes to /show.  Not sure why!
+  get '/list_users/index'
   resources :list_users
 
   
